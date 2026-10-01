@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="Images/image_2.jpeg" alt="HerComfort Physical Prototype" width="46%">
-  <img src="Images/image_3.jpeg" alt="HerComfort Physical Prototype" width="46%">
+  <img src="Images/image_4.jpeg" alt="HerComfort Physical Prototype" width="46%">
 </p>
 
 <p align="center">
