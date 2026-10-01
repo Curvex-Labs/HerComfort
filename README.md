@@ -154,7 +154,7 @@ The SolidWorks file contains the editable mechanical design, while the STEP file
 ## Current Development Status
 
 ### Completed
-- Physical prototype
+-** Physical prototype**
 - Refined industrial design
 - SolidWorks CAD model
 - STEP export
@@ -164,15 +164,6 @@ The SolidWorks file contains the editable mechanical design, while the STEP file
 
 ### In Progress
 - Custom main PCB
-- ESP32-C6 integration
-- BioAmp Candy circuit integration
-- Heating control electronics
-- Vibration control electronics
-- Power architecture
-- Sensor integration
-- BLE firmware
-- Final enclosure-PCB integration
-
 ---
 
 ## Tools Used
