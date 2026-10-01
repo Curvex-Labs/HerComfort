@@ -1,0 +1,25 @@
+"SurfaceFinishShaderType" 0
+"blurryReflections" off
+"bumpIsNormalMap" on
+"bumpStrength" 0.001
+"bumpTexture" "C:/Users/daksh/Documents/Codex/2026-10-01/i-want-you-to-help-me-2/outputs/HerComfort_Refined/Appearances/Textures/gray_textile_normal.dds"
+color texture "bump_file_texture" "C:/Users/daksh/Documents/Codex/2026-10-01/i-want-you-to-help-me-2/outputs/HerComfort_Refined/Appearances/Textures/gray_textile_bump.jpg" 
+"col1" 1 1 1
+color texture "color_texname" "C:/Users/daksh/Documents/Codex/2026-10-01/i-want-you-to-help-me-2/outputs/HerComfort_Refined/Appearances/Textures/gray_textile.jpg" 
+"diffuse_factor" 1
+"displacementDistance" 0.001
+"doubleSided" on
+"initTextureHeight" 0.0254
+"initTextureWidth" 0.0254
+"luminousIntensity" 0
+"mtl_ior" 1
+"num_cols" 0
+"reflectivity" 0
+"refractionRoughness" 0
+"roughness" 0
+"specular_color" 1 1 1
+"specular_factor" 0.01
+"swP2M" on
+"sw_shader" clothgreycotton
+"transparency" 0
+
