@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HerComfort | Smart Wearable Health Companion</title>
+
+  <meta
+    name="description"
+    content="HerComfort is a smart wearable health companion designed for menstrual comfort, physiological monitoring, personalized therapy and connected health support."
+  />
+
+  <meta name="theme-color" content="#f9eef3" />
+
+  <style>
+    :root {
+      --bg: #fffafc;
+      --surface: #ffffff;
+      --surface-soft: #fff3f7;
+
+      --primary: #c94f7c;
+      --primary-dark: #933257;
+      --primary-light: #f3bfd0;
+
+      --text: #241a1e;
+      --muted: #76636b;
+      --border: rgba(147, 50, 87, 0.12);
+
+      --shadow:
+        0 20px 60px rgba(105, 45, 70, 0.10);
+
+      --radius: 28px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        radial-gradient(circle at top left, #fff0f5 0, transparent 35%),
+        linear-gradient(180deg, #fffafc 0%, #ffffff 40%, #fff8fb 100%);
+
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(calc(100% - 32px), 1180px);
+
+      padding: 12px 16px 12px 22px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 8px 40px rgba(100, 40, 65, 0.10);
+
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+
+      box-shadow:
+        0 6px 16px rgba(201,79,124,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+
+      font-size: .92rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+
+      color: white !important;
+      box-shadow:
+        0 8px 20px rgba(201,79,124,.22);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        130px 0 80px;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      top: 50px;
+      right: -160px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(231,133,165,.22),
+          rgba(231,133,165,0)
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      color: var(--primary-dark);
+      background: #fff0f5;
+
+      border: 1px solid rgba(201,79,124,.14);
+
+      font-size: .82rem;
+      font-weight: 750;
+      letter-spacing: .025em;
+
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #e46491;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5px rgba(228,100,145,.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 7vw, 6.8rem);
+      line-height: .91;
+      letter-spacing: -0.065em;
+
+      max-width: 740px;
+    }
+
+    .gradient-text {
+      color: var(--primary-dark);
+      background:
+        linear-gradient(
+          120deg,
+          #8e3153,
+          #d25885,
+          #a53762
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 28px;
+
+      font-size: 1.12rem;
+      line-height: 1.75;
+
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      padding: 14px 22px;
+
+      border-radius: 999px;
+
+      font-size: .95rem;
+      font-weight: 750;
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+
+      box-shadow:
+        0 10px 28px rgba(166,52,94,.22);
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 8px 30px rgba(70,25,45,.06);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+
+      padding: 12px;
+      background: rgba(255,255,255,.88);
+
+      border:
+        1px solid rgba(255,255,255,.8);
+
+      border-radius: 36px;
+
+      box-shadow:
+        0 32px 80px rgba(110,45,72,.18);
+    }
+
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 27px;
+    }
+
+    .floating-card {
+      position: absolute;
+
+      padding: 13px 16px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.93);
+
+      backdrop-filter: blur(18px);
+
+      border:
+        1px solid rgba(255,255,255,.8);
+
+      box-shadow:
+        0 16px 40px rgba(89,35,57,.14);
+
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .floating-card.one {
+      top: 8%;
+      left: -45px;
+    }
+
+    .floating-card.two {
+      bottom: 10%;
+      right: -25px;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 7px;
+      background: #39b972;
+      border-radius: 50%;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--primary);
+      font-size: .74rem;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size:
+        clamp(2.2rem, 5vw, 4rem);
+
+      letter-spacing: -.045em;
+      line-height: 1.02;
+
+      max-width: 780px;
+    }
+
+    .section-copy {
+      margin-top: 18px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    /* FEATURE GRID */
+
+    .features {
+      margin-top: 45px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 29px;
+
+      border-radius: var(--radius);
+
+      background:
+        rgba(255,255,255,.82);
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 14px 40px rgba(100,40,65,.055);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 24px 60px rgba(100,40,65,.10);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffe8f0,
+          #fff5f8
+        );
+
+      font-size: 1.4rem;
+
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    /* PROTOTYPE */
+
+    .prototype-section {
+      background:
+        linear-gradient(
+          180deg,
+          #fff7fa,
+          #fff
+        );
+    }
+
+    .prototype-grid {
+      margin-top: 45px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 22px;
+    }
+
+    .prototype-img {
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      background: white;
+
+      box-shadow:
+        var(--shadow);
+
+      border:
+        1px solid var(--border);
+    }
+
+    .prototype-img img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+
+      transition:
+        transform .6s ease;
+    }
+
+    .prototype-img:hover img {
+      transform: scale(1.025);
+    }
+
+    /* CAD */
+
+    .cad-grid {
+      margin-top: 42px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .cad-card {
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 26px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 15px 45px rgba(82,31,52,.065);
+    }
+
+    .cad-card img {
+      width: 100%;
+      height: 310px;
+      object-fit: contain;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fafafa,
+          #fff
+        );
+
+      padding: 14px;
+    }
+
+    .cad-label {
+      padding: 17px 20px;
+      font-weight: 750;
+    }
+
+    /* SPECS */
+
+    .spec-section {
+      background:
+        #23181d;
+
+      color: white;
+    }
+
+    .spec-section .section-copy {
+      color: rgba(255,255,255,.65);
+    }
+
+    .spec-grid {
+      margin-top: 46px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .spec {
+      padding: 25px;
+
+      border-radius: 22px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      border:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .spec-value {
+      font-size: 1.65rem;
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
+
+    .spec-name {
+      margin-top: 5px;
+
+      color:
+        rgba(255,255,255,.57);
+
+      font-size: .83rem;
+    }
+
+    /* ARCHITECTURE */
+
+    .architecture {
+      margin-top: 45px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      align-items: center;
+      gap: 10px;
+    }
+
+    .arch-node {
+      padding: 20px 14px;
+
+      text-align: center;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+      font-weight: 760;
+
+      box-shadow:
+        0 12px 40px rgba(80,30,52,.06);
+    }
+
+    .arch-arrow {
+      display: none;
+    }
+
+    /* STATUS */
+
+    .status-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+    .status-card {
+      padding: 30px;
+
+      border-radius: 26px;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      box-shadow:
+        0 14px 40px rgba(82,31,52,.055);
+    }
+
+    .status-card h3 {
+      margin-bottom: 16px;
+    }
+
+    .status-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .status-card li {
+      color: var(--muted);
+    }
+
+    .status-card li::before {
+      content: "✓";
+      margin-right: 9px;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-bottom: 120px;
+    }
+
+    .cta-box {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        70px 50px;
+
+      text-align: center;
+
+      border-radius: 38px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #8d3153,
+          #d25885
+        );
+
+      box-shadow:
+        0 35px 90px rgba(134,47,79,.25);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+
+      width: 370px;
+      height: 370px;
+
+      top: -200px;
+      left: -100px;
+
+      background:
+        rgba(255,255,255,.12);
+
+      border-radius: 50%;
+    }
+
+    .cta h2 {
+      font-size:
+        clamp(2.3rem, 5vw, 4.3rem);
+
+      letter-spacing: -.05em;
+      line-height: 1;
+
+      position: relative;
+    }
+
+    .cta p {
+      margin:
+        20px auto 28px;
+
+      max-width: 660px;
+
+      color:
+        rgba(255,255,255,.78);
+
+      position: relative;
+    }
+
+    .cta .button {
+      background: white;
+      color: var(--primary-dark);
+
+      position: relative;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding:
+        30px 0 42px;
+
+      color: var(--muted);
+
+      font-size: .84rem;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity .75s ease,
+        transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform:
+        translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-visual {
+        max-width: 560px;
+        margin-inline: auto;
+      }
+
+      .features {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .spec-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .architecture {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 620px) {
+      .container {
+        width:
+          min(calc(100% - 24px), var(--max-width));
+      }
+
+      .navbar {
+        top: 10px;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .features,
+      .prototype-grid,
+      .cad-grid,
+      .status-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .prototype-img img {
+        height: auto;
+      }
+
+      .spec-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .architecture {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .cta-box {
+        padding:
+          55px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+
+    <a href="#home" class="brand">
+
+      <div class="brand-mark">♥</div>
+
+      HerComfort
+
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#prototype">Prototype</a>
+
+      <a href="#design">Design</a>
+
+      <a href="#technology">Technology</a>
+
+      <a href="#status">Status</a>
+
+      <a
+        href="https://github.com/Curvex-Labs/HerComfort"
+        target="_blank"
+        class="nav-cta"
+      >
+        GitHub
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main id="home" class="hero">
+
+    <div class="container hero-grid">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+
+          <span class="dot"></span>
+
+          Wearable Health • Therapy • Intelligence
+
+        </div>
+
+        <h1>
+
+          Comfort,
+          <span class="gradient-text">reimagined.</span>
+
+        </h1>
+
+        <p class="hero-description">
+
+          HerComfort is a wearable health companion designed
+          for menstrual comfort, physiological monitoring,
+          controlled therapy and connected health support —
+          combining sensing, embedded electronics and
+          wearable design into one compact system.
+
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#prototype"
+            class="button button-primary"
+          >
+            Explore HerComfort
+          </a>
+
+          <a
+            href="https://github.com/Curvex-Labs/HerComfort"
+            target="_blank"
+            class="button button-secondary"
+          >
+            View Engineering Files
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual reveal">
+
+        <div class="hero-card">
+
+          <img
+            src="Images/image_4.jpeg"
+            alt="HerComfort physical prototype with live mobile monitoring"
+          />
+
+        </div>
+
+        <div class="floating-card one">
+
+          <span class="status-dot"></span>
+
+          Live monitoring
+
+        </div>
+
+        <div class="floating-card two">
+
+          BLE connected • Wearable therapy
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ABOUT / CAPABILITIES -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Why HerComfort
+      </div>
+
+      <h2 class="section-title reveal">
+
+        More than a heating belt.
+
+      </h2>
+
+      <p class="section-copy reveal">
+
+        HerComfort is being developed as an integrated
+        wearable platform combining therapy, sensing,
+        embedded control and mobile connectivity rather
+        than treating each function as a separate device.
+
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">♨</div>
+
+          <h3>Controlled Heat Therapy</h3>
+
+          <p>
+            Closed-loop heating architecture designed around
+            temperature feedback, controlled power delivery
+            and fail-safe protection.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">〰</div>
+
+          <h3>Vibration Therapy</h3>
+
+          <p>
+            Dual controllable vibration channels intended for
+            continuous, pulse and variable-intensity therapy.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">∿</div>
+
+          <h3>EMG Monitoring</h3>
+
+          <p>
+            Three dry contact locations feed an integrated
+            analog front-end for relative abdominal
+            skeletal-muscle activity monitoring.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">⌁</div>
+
+          <h3>Motion Awareness</h3>
+
+          <p>
+            A six-axis inertial sensing architecture supports
+            movement, posture and activity context.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">⌁</div>
+
+          <h3>BLE Connectivity</h3>
+
+          <p>
+            Wireless communication connects the wearable
+            with the HerComfort mobile monitoring and control
+            interface.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">◎</div>
+
+          <h3>Offline Control</h3>
+
+          <p>
+            Essential wearable functions are intended to
+            remain locally accessible without requiring
+            continuous internet connectivity.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHYSICAL PROTOTYPE -->
+
+  <section
+    id="prototype"
+    class="prototype-section"
+  >
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Working Prototype
+      </div>
+
+      <h2 class="section-title reveal">
+
+        From concept to a physical wearable.
+
+      </h2>
+
+      <p class="section-copy reveal">
+
+        HerComfort already exists as a physical prototype.
+        The current development phase focuses on refining the
+        enclosure, electronics architecture, PCB integration
+        and product-level engineering.
+
+      </p>
+
+
+      <div class="prototype-grid">
+
+        <div class="prototype-img reveal">
+
+          <img
+            src="Images/image_2.jpeg"
+            alt="HerComfort wearable physical prototype"
+          />
+
+        </div>
+
+
+        <div class="prototype-img reveal">
+
+          <img
+            src="Images/image_4.jpeg"
+            alt="HerComfort physical prototype with mobile monitoring"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CAD -->
+
+  <section id="design">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Industrial Design
+      </div>
+
+      <h2 class="section-title reveal">
+
+        Designed around the body,
+        not around the electronics.
+
+      </h2>
+
+      <p class="section-copy reveal">
+
+        The refined enclosure and belt were developed in
+        SolidWorks with a curved abdominal interface,
+        compact electronics housing, elastic strap,
+        charging access and integrated EMG contact
+        locations.
+
+      </p>
+
+
+      <div class="cad-grid">
+
+        <div class="cad-card reveal">
+
+          <img
+            src="Images/CAD_Images/01_Front_Full_Belt.png"
+            alt="HerComfort front CAD view"
+          />
+
+          <div class="cad-label">
+            Front View
+          </div>
+
+        </div>
+
+
+        <div class="cad-card reveal">
+
+          <img
+            src="Images/CAD_Images/02_Rear_Full_Belt.png"
+            alt="HerComfort rear CAD view"
+          />
+
+          <div class="cad-label">
+            Rear View
+          </div>
+
+        </div>
+
+
+        <div class="cad-card reveal">
+
+          <img
+            src="Images/CAD_Images/07_Isometric_Full_Belt.png"
+            alt="HerComfort isometric CAD view"
+          />
+
+          <div class="cad-label">
+            Isometric View
+          </div>
+
+        </div>
+
+
+        <div class="cad-card reveal">
+
+          <img
+            src="Images/CAD_Images/08_Inner_Full_Belt.png"
+            alt="HerComfort inner CAD view"
+          />
+
+          <div class="cad-label">
+            Inner / Skin-Facing View
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SPECS -->
+
+  <section class="spec-section">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Mechanical Platform
+      </div>
+
+      <h2 class="section-title reveal">
+
+        Compact wearable architecture.
+
+      </h2>
+
+      <p class="section-copy reveal">
+
+        Current refined external concept dimensions used
+        during the mechanical development stage.
+
+      </p>
+
+
+      <div class="spec-grid">
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            185 mm
+          </div>
+
+          <div class="spec-name">
+            Therapy module length
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            78 mm
+          </div>
+
+          <div class="spec-name">
+            Module height
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            21.4 mm
+          </div>
+
+          <div class="spec-name">
+            Approx. depth envelope
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            48 mm
+          </div>
+
+          <div class="spec-name">
+            Strap width
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            3 × 18 mm
+          </div>
+
+          <div class="spec-name">
+            Dry EMG contacts
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            30 mm
+          </div>
+
+          <div class="spec-name">
+            EMG contact spacing
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            USB-C
+          </div>
+
+          <div class="spec-name">
+            Charging interface
+          </div>
+
+        </div>
+
+
+        <div class="spec reveal">
+
+          <div class="spec-value">
+            BLE
+          </div>
+
+          <div class="spec-name">
+            Wireless communication
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TECHNOLOGY -->
+
+  <section id="technology">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Electronics Architecture
+      </div>
+
+      <h2 class="section-title reveal">
+
+        One compact controller
+        for the entire belt.
+
+      </h2>
+
+      <p class="section-copy reveal">
+
+        The next HerComfort electronics revision is being
+        developed around a custom main PCB using bare
+        components rather than development modules.
+
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">◉</div>
+
+          <h3>ESP32-C6</h3>
+
+          <p>
+            Central controller for sensing, BLE,
+            therapy control and embedded logic.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">≈</div>
+
+          <h3>Integrated BioAmp Front-End</h3>
+
+          <p>
+            Muscle BioAmp Candy analog architecture is being
+            integrated directly onto the main PCB.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">⊕</div>
+
+          <h3>6-Axis IMU</h3>
+
+          <p>
+            Motion and posture context using accelerometer
+            and gyroscope sensing.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">°</div>
+
+          <h3>Thermal Feedback</h3>
+
+          <p>
+            Remote therapy-zone sensing supports
+            closed-loop temperature control.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">⚡</div>
+
+          <h3>Custom Power System</h3>
+
+          <p>
+            Battery charging, regulation, monitoring
+            and actuator power management are being
+            integrated on-board.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+          <div class="feature-icon">◌</div>
+
+          <h3>Hardware Safety</h3>
+
+          <p>
+            The architecture includes fail-safe actuator
+            states and independent safety considerations
+            beyond firmware control.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="architecture reveal">
+
+        <div class="arch-node">
+          Sensors
+        </div>
+
+        <div class="arch-node">
+          Analog Front-End
+        </div>
+
+        <div class="arch-node">
+          ESP32-C6
+        </div>
+
+        <div class="arch-node">
+          Therapy Control
+        </div>
+
+        <div class="arch-node">
+          Mobile App
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STATUS -->
+
+  <section id="status">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Development
+      </div>
+
+      <h2 class="section-title reveal">
+
+        Engineering in progress.
+
+      </h2>
+
+
+      <div class="status-wrap">
+
+        <div class="status-card reveal">
+
+          <h3>
+            Completed
+          </h3>
+
+          <ul>
+
+            <li>
+              Physical wearable prototype
+            </li>
+
+            <li>
+              Mobile monitoring interface
+            </li>
+
+            <li>
+              Refined industrial design
+            </li>
+
+            <li>
+              SolidWorks CAD model
+            </li>
+
+            <li>
+              STEP geometry export
+            </li>
+
+            <li>
+              Dry EMG contact placement
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="status-card reveal">
+
+          <h3>
+            In Development
+          </h3>
+
+          <ul>
+
+            <li>
+              Custom HerComfort PCB
+            </li>
+
+            <li>
+              Bare ESP32-C6 integration
+            </li>
+
+            <li>
+              Integrated EMG analog front-end
+            </li>
+
+            <li>
+              Heating and vibration control
+            </li>
+
+            <li>
+              Power architecture
+            </li>
+
+            <li>
+              Final enclosure-PCB integration
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box reveal">
+
+        <h2>
+          Building comfort
+          with intelligence.
+        </h2>
+
+        <p>
+
+          HerComfort is progressing from a functional
+          prototype toward an integrated wearable platform
+          combining comfort, sensing and embedded engineering.
+
+        </p>
+
+        <a
+          href="https://github.com/Curvex-Labs/HerComfort"
+          target="_blank"
+          class="button"
+        >
+          Explore the Project on GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-row">
+
+      <div>
+        © 2026 HerComfort
+      </div>
+
+      <div>
+        Wearable Health • Embedded Systems • Human-Centered Design
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(el =>
+        observer.observe(el)
+      );
+
+  </script>
+
+</body>
+</html>
