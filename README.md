@@ -1,7 +1,7 @@
 # HerComfort
 
 <p align="center">
-  <img src="Images/Images/HerComfort_All_Views_Combined.png" alt="HerComfort Overview" width="900">
+  <img src="Images/HerComfort_All_Views_Combined.png" alt="HerComfort Overview" width="900">
 </p>
 
 HerComfort is a wearable health companion designed for menstrual comfort, physiological monitoring, local therapy control, and connected health support.
@@ -41,13 +41,13 @@ HerComfort is currently under active development.
 ## Product Views
 
 <p align="center">
-  <img src="Images/Images/01_Front_Full_Belt.png" width="45%">
-  <img src="Images/Images/02_Rear_Full_Belt.png" width="45%">
+  <img src="Images/01_Front_Full_Belt.png" width="45%">
+  <img src="Images/02_Rear_Full_Belt.png" width="45%">
 </p>
 
 <p align="center">
-  <img src="Images/Images/07_Isometric_Full_Belt.png" width="45%">
-  <img src="Images/Images/08_Inner_Full_Belt.png" width="45%">
+  <img src="Images/07_Isometric_Full_Belt.png" width="45%">
+  <img src="Images/08_Inner_Full_Belt.png" width="45%">
 </p>
 
 ---
@@ -55,13 +55,13 @@ HerComfort is currently under active development.
 ## Design Details
 
 <p align="center">
-  <img src="Images/Images/09_EMG_Contact_Closeup.png" width="45%">
-  <img src="Images/Images/10_Buttons_USB_C_Closeup.png" width="45%">
+  <img src="Images/09_EMG_Contact_Closeup.png" width="45%">
+  <img src="Images/10_Buttons_USB_C_Closeup.png" width="45%">
 </p>
 
 <p align="center">
-  <img src="Images/Images/11_Front_Module_Closeup.png" width="45%">
-  <img src="Images/Images/12_Rear_Comfort_Pad_Closeup.png" width="45%">
+  <img src="Images/11_Front_Module_Closeup.png" width="45%">
+  <img src="Images/12_Rear_Comfort_Pad_Closeup.png" width="45%">
 </p>
 
 ---
