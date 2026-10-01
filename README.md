@@ -154,7 +154,7 @@ The SolidWorks file contains the editable mechanical design, while the STEP file
 ## Current Development Status
 
 ### Completed
--** Physical prototype**
+- Physical prototype
 - Refined industrial design
 - SolidWorks CAD model
 - STEP export
