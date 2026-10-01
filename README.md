@@ -1,7 +1,7 @@
 # HerComfort
 
 <p align="center">
-  <img src="Images/image_2.jpeg" width="350" height="305">
+  <img src="Images/image_2.jpeg" width="350" height="320">
   <img src="Images/image_4.jpeg" width="350" height="300">
 </p>
 
