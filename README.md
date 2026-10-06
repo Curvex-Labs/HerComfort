@@ -1,4 +1,7 @@
 # HerComfort
+HerComfort is a wearable health companion designed for menstrual comfort, physiological monitoring, local therapy control, and connected health monitoring and support.
+
+The project combines wearable mechanical design, sensing, therapy control, BLE connectivity, mobile monitoring, and custom embedded electronics in a compact belt-based system.
 
 <p align="center">
   <img src="Images/image_2.jpeg" width="45%">
@@ -8,10 +11,6 @@
 <p align="center">
   <b>HerComfort Physical Prototype with Live Mobile Monitoring</b>
 </p>
-
-HerComfort is a wearable health companion designed for menstrual comfort, physiological monitoring, local therapy control, and connected health monitoring and support.
-
-The project combines wearable mechanical design, sensing, therapy control, BLE connectivity, mobile monitoring, and custom embedded electronics in a compact belt-based system.
 
 ---
 
