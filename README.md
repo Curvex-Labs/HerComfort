@@ -134,11 +134,11 @@ The carrier board supports:
 - Li-ion battery connection
 
 The removable modules are mounted using female headers so that the controller and sensor modules can be replaced or serviced without replacing the complete PCB.
-
+Images/PCB_Images/PCB_Back.png
 ### PCB Schematic
 
 <p align="center">
-  <img src="PCB%20Carrier%20Board/Images/Schematic.png"
+  <img src="Images/PCB_Images/Schematic.png"
        alt="HerComfort PCB Schematic"
        width="90%">
 </p>
@@ -146,10 +146,10 @@ The removable modules are mounted using female headers so that the controller an
 ### PCB Front and Back Views
 
 <p align="center">
-  <img src="PCB%20Carrier%20Board/Images/PCB_Front.png"
+  <img src="Images/PCB_Images/PCB_Front.png"
        alt="HerComfort PCB Front View"
        width="48%">
-  <img src="PCB%20Carrier%20Board/Images/PCB_Back.png"
+  <img src="Images/PCB_Images/PCB_Back.png"
        alt="HerComfort PCB Back View"
        width="48%">
 </p>
@@ -157,10 +157,10 @@ The removable modules are mounted using female headers so that the controller an
 ### PCB Routing
 
 <p align="center">
-  <img src="PCB%20Carrier%20Board/Images/Routing_Front.png"
+  <img src="Images/PCB_Images/Routing_Front.png"
        alt="HerComfort PCB Front Routing"
        width="48%">
-  <img src="PCB%20Carrier%20Board/Images/Routing_Back.png"
+  <img src="Images/PCB_Images/Routing_Back.png"
        alt="HerComfort PCB Back Routing"
        width="48%">
 </p>
