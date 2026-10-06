@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://us.123rf.com/450wm/vectomart/vectomart1808/vectomart180800065/107422713-lord-ganpati-background-for-ganesh-chaturthi-festival-of-india-with-message-meaning-my-lord-ganesha.jpg" width="125" height="125" />
-</p>
-
 # HerComfort
 
 HerComfort is a wearable menstrual comfort and wellness solution designed to support women during emergencies, disasters, displacement, travel, relief-camp conditions, and other situations where access to conventional menstrual-care resources may be limited. During floods, earthquakes, evacuation, temporary shelters, or other emergency situations, women may have limited access to hot water, private resting spaces, continuous healthcare support, or convenient methods for managing menstrual discomfort. HerComfort aims to provide a portable, rechargeable, hands-free solution that combines controlled heating, vibration-based comfort, physiological monitoring, and local therapy control in a compact wearable belt.
