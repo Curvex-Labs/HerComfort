@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://us.123rf.com/450wm/vectomart/vectomart1808/vectomart180800065/107422713-lord-ganpati-background-for-ganesh-chaturthi-festival-of-india-with-message-meaning-my-lord-ganesha.jpg" width="125" height="125" />
+</p>
+
 # HerComfort
 HerComfort is a wearable health companion designed for menstrual comfort, physiological monitoring, local therapy control, and connected health monitoring and support.
 
