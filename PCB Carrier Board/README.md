@@ -39,7 +39,6 @@ The carrier board integrates and connects the main HerComfort hardware modules:
 ## Back Routing
 
 ![Back Routing](PCB%20Carrier%20Board/Images/Routing_Back.png)
-
 ## Main GPIO Mapping
 
 | Function | XIAO Pin | GPIO |
