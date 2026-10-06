@@ -3,9 +3,11 @@
 </p>
 
 # HerComfort
-HerComfort is a wearable health companion designed for menstrual comfort, physiological monitoring, local therapy control, and connected health monitoring and support.
 
-The project combines wearable mechanical design, sensing, therapy control, BLE connectivity, mobile monitoring, and custom embedded electronics in a compact belt-based system.
+HerComfort is a wearable menstrual comfort and wellness solution designed to support women during emergencies, disasters, displacement, travel, relief-camp conditions, and other situations where access to conventional menstrual-care resources may be limited. During floods, earthquakes, evacuation, temporary shelters, or other emergency situations, women may have limited access to hot water, private resting spaces, continuous healthcare support, or convenient methods for managing menstrual discomfort. HerComfort aims to provide a portable, rechargeable, hands-free solution that combines controlled heating, vibration-based comfort, physiological monitoring, and local therapy control in a compact wearable belt.
+
+The system integrates temperature monitoring, muscle-activity sensing, motion and posture awareness, BLE connectivity, and offline operation so that essential comfort functions can remain available even when continuous smartphone or internet access is not practical.
+By combining wearable therapy, sensing, portability, and connected monitoring, HerComfort is intended to improve menstrual comfort, independence, and dignity for women in both everyday life and challenging emergency or disaster-response environments.
 
 <p align="center">
   <img src="Images/image_2.jpeg" width="45%">
