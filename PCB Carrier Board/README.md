@@ -22,23 +22,23 @@ The carrier board integrates and connects the main HerComfort hardware modules:
 
 ## Schematic
 
-![HerComfort PCB Schematic](PCB%20Carrier%20Board/Images/Schematic.png)
+![HerComfort PCB Schematic](Images/Schematic.png)
 
 ## PCB Front View
 
-![PCB Front](PCB%20Carrier%20Board/Images/PCB_Front.png)
+![PCB Front](Images/PCB_Front.png)
 
 ## PCB Back View
 
-![PCB Back](PCB%20Carrier%20Board/Images/PCB_Back.png)
+![PCB Back](Images/PCB_Back.png)
 
 ## Front Routing
 
-![Front Routing](PCB%20Carrier%20Board/Images/Routing_Front.png)
+![Front Routing](Images/Routing_Front.png)
 
 ## Back Routing
 
-![Back Routing](PCB%20Carrier%20Board/Images/Routing_Back.png)
+![Back Routing](Images/Routing_Back.png)
 
 ## Main GPIO Mapping
 
