@@ -1,8 +1,8 @@
 # HerComfort
 
 <p align="center">
-  <img src="Images/image_2.jpeg" width="350" height="400">
-  <img src="Images/image_4.jpeg" width="350" height="275">
+  <img src="Images/image_2.jpeg" width="45%">
+  <img src="Images/image_4.jpeg" width="45%">
 </p>
 
 <p align="center">
@@ -86,100 +86,114 @@ The contacts are designed as:
 
 The intended signal chain is:
 
-**Dry EMG electrodes → Integrated BioAmp Candy analog front-end → Signal conditioning → ESP32-C6 ADC**
+**Dry EMG electrodes → Muscle BioAmp Candy → Signal conditioning → ESP32-C6 ADC**
 
 ---
 
 ## Electronics Development
 
-The custom HerComfort electronics are currently under development.
+HerComfort currently uses a custom KiCad-designed carrier PCB that integrates the existing prototype modules into a compact and serviceable wearable electronics platform.
 
-The planned main PCB will contain or control:
+The present carrier board interfaces:
 
-- Bare ESP32-C6
-- Integrated Muscle BioAmp Candy analog front-end
-- 6-axis IMU
-- Temperature sensing
-- Heating pad control
-- Two vibration motor channels
-- Physical control buttons
-- RGB/status indication
-- USB-C charging and programming
-- Battery monitoring
-- BLE communication
-- Safety and fault-control circuitry
+- Seeed Studio XIAO ESP32C6
+- MPU6050 IMU
+- Muscle BioAmp Candy
+- DS18B20 temperature sensor
+- TP4056 charging module
+- Mini-360 DC-DC converter
+- Heating pad
+- Vibration motor
+- AO3400A MOSFET switching stages
+- Physical Mode button
+- Li-ion battery
 
-The PCB is being designed to fit inside the curved pink front enclosure.
+This carrier board represents the current functional prototype electronics.
 
----
-
-## Therapy Functions
-
-### Heating Therapy
-
-The heating subsystem is intended to provide:
-
-- Controlled abdominal heating
-- Temperature feedback
-- PWM-based heater control
-- Over-temperature protection
-- Hardware safety cutoff
-- Fail-safe OFF behavior
-
-### Vibration Therapy
-
-The system is planned with two independently controlled vibration motors supporting:
-
-- Continuous vibration
-- Pulse vibration
-- Adjustable intensity
-- Pattern-based therapy modes
+A future fully integrated HerComfort PCB is planned to replace the removable modules with dedicated onboard circuitry and additional safety, sensing, power-management, and protection features.
 
 ---
 
-## Mechanical Files
+## PCB Carrier Board
 
-The `Mechanical/` directory contains:
+A custom HerComfort carrier PCB has been designed in KiCad to replace loose prototype wiring and provide a cleaner, compact hardware platform for the current working electronics.
 
-- `HerComfort_Refined.SLDPRT`
-- `HerComfort_Refined.step`
-- `Design Notes.md`
-- `Appearances/`
-- `Views/`
+The carrier board supports:
 
-The SolidWorks file contains the editable mechanical design, while the STEP file provides neutral geometry for integration and sharing.
+- Seeed Studio XIAO ESP32C6
+- MPU6050 IMU
+- Muscle BioAmp Candy
+- DS18B20 temperature sensor
+- TP4056 Li-ion charging module
+- Mini-360 DC-DC converter
+- AO3400A MOSFET heater control
+- AO3400A MOSFET vibration motor control
+- 1N5819 flyback protection diode
+- Mode push button
+- Heating pad connection
+- Vibration motor connection
+- Li-ion battery connection
 
----
+The removable modules are mounted using female headers so that the controller and sensor modules can be replaced or serviced without replacing the complete PCB.
 
-## Current Development Status
+### PCB Schematic
 
-### Completed
-- Physical prototype
-- Refined industrial design
-- SolidWorks CAD model
-- STEP export
-- Dry EMG contact placement
-- Mechanical views
-- External enclosure concept
+<p align="center">
+  <img src="PCB%20Carrier%20Board/Images/Schematic.png"
+       alt="HerComfort PCB Schematic"
+       width="90%">
+</p>
 
-### In Progress
-- Custom main PCB
----
+### PCB Front and Back Views
 
-## Tools Used
+<p align="center">
+  <img src="PCB%20Carrier%20Board/Images/PCB_Front.png"
+       alt="HerComfort PCB Front View"
+       width="48%">
+  <img src="PCB%20Carrier%20Board/Images/PCB_Back.png"
+       alt="HerComfort PCB Back View"
+       width="48%">
+</p>
 
-- SolidWorks 2024
-- KiCad
-- ESP32-C6
-- Embedded C/C++
-- Bluetooth Low Energy
+### PCB Routing
 
----
+<p align="center">
+  <img src="PCB%20Carrier%20Board/Images/Routing_Front.png"
+       alt="HerComfort PCB Front Routing"
+       width="48%">
+  <img src="PCB%20Carrier%20Board/Images/Routing_Back.png"
+       alt="HerComfort PCB Back Routing"
+       width="48%">
+</p>
 
-## Disclaimer
+### Main GPIO Mapping
 
-HerComfort is currently a prototype-stage engineering project.
+| Function | XIAO Pin | ESP32-C6 GPIO |
+|---|---:|---:|
+| Mode Button | D0 | GPIO0 |
+| EMG Signal | D1 | GPIO1 |
+| I²C SDA | D4 | GPIO22 |
+| I²C SCL | D5 | GPIO23 |
+| Vibration Motor | D7 | GPIO17 |
+| DS18B20 Temperature | D8 | GPIO19 |
+| Heating Pad | D10 | GPIO18 |
 
-The present mechanical design represents the product concept and enclosure geometry. Electronic, thermal, sensing, and safety functions are still under development and validation.
+### Power Architecture
 
-No medical certification or clinical diagnostic capability is currently claimed.
+```text
+3.7 V Li-ion Battery
+        │
+        ▼
+      TP4056
+        │
+        ├────────► XIAO ESP32C6 battery input
+        │
+        ▼
+     Mini-360
+        │
+        ▼
+ Regulated therapy rail
+        │
+        ├────────► Heating Pad
+        │
+        └────────► Vibration Motor
