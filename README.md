@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://accet-site-media-trial.s3.ap-northeast-1.amazonaws.com/cocurricular/sih/sih/sih_logo.webp" />
+  <img src="https://accet-site-media-trial.s3.ap-northeast-1.amazonaws.com/cocurricular/sih/sih/sih_logo.webp" width="125" height="125" />
 </p>
 
 # HerComfort
