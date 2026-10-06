@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="Images/image_2.jpeg" width="45%">
-  <img src="Images/image_4.jpeg" width="42%">
+  <img src="Images/image_4.jpeg" width="41.8%">
 </p>
 
 <p align="center">
